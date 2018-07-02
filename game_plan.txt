@@ -1,0 +1,14 @@
+Ladbrokes (Selenium)
+
+-- Sign in
+-- Retrieve login status
+-- Retrieve next to jump lists
+-- Find race
+-- Retrieve odds
+-- Place bet (record bet)
+-- Retrive results of bet (record results)
+
+Plunge (Appium possibly?) https://www.youtube.com/watch?v=eRddxh-4u5k
+-- Sign in
+-- Retrieve current "plunged" races
+-- Send plunged races to Ladbrokes application.
