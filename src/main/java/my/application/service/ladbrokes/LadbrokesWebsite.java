@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import static my.application.enums.DriverType.CHROME;
 import static org.openqa.selenium.Keys.RETURN;
 
@@ -30,7 +32,7 @@ public class LadbrokesWebsite extends BaseBettingWebsite {
         WebElement loginForm = webDriver.findElement(By.id("form_users_login"));
         WebElement userNameInput = loginForm.findElement(By.id("userauth_username"));
         WebElement passwordInput = loginForm.findElement(By.id("userauth_password"));
-        passwordInput.sendKeys("Password");
+        passwordInput.sendKeys("");
         userNameInput.sendKeys("Alizkat");
         Thread.sleep(WAIT_TIME);
         userNameInput.sendKeys(RETURN);
@@ -39,7 +41,7 @@ public class LadbrokesWebsite extends BaseBettingWebsite {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loggedin")));
     }
 
-    public void openPage() {
+    public void openHomePage() {
         super.openPage(LADBROKES_URL);
     }
 
@@ -52,6 +54,16 @@ public class LadbrokesWebsite extends BaseBettingWebsite {
             return loginDiv.isDisplayed();
         }
         return false;
+    }
+
+    public void getHorseRaces(){
+        super.openPage(LADBROKES_HORSES_URL);
+        WebElement racesDiv = webDriver.findElement(By.id("racesToday"));
+        List<WebElement> listOfRaceBoxs = racesDiv.findElements(By.className("fullbox"));
+        for (WebElement listOfRaceBox : listOfRaceBoxs) {
+            WebElement raceHeading = listOfRaceBox.findElement(By.className("fullbox-hdr"));
+            System.out.println("Text is: " + raceHeading.getText());
+        }
     }
 
 
