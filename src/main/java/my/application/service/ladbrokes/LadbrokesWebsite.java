@@ -60,15 +60,25 @@ public class LadbrokesWebsite extends BaseBettingWebsite {
         super.openPage(LADBROKES_HORSES_URL);
         WebElement racesDiv = webDriver.findElement(By.id("racesToday"));
         List<WebElement> raceBoxes = racesDiv.findElements(By.className("fullbox"));
-        for (WebElement listOfRaceBox : raceBoxes) {
-            WebElement raceHeading = listOfRaceBox.findElement(By.className("fullbox-hdr"));
-            System.out.println("Text is: " + raceHeading.getText());
+        for (WebElement fullEventBox : raceBoxes) {
+            WebElement raceHeading = fullEventBox.findElement(By.className("fullbox-hdr"));
+            System.out.println("Top level: " + raceHeading.getText());
+            getRacesForLocation(fullEventBox);
         }
     }
 
     private void getRacesForLocation(WebElement fullEventBox) {
         List<WebElement> meetings = fullEventBox.findElements(By.className("meeting"));
         for (WebElement meeting : meetings) {
+            WebElement raceLocationCell = meeting.findElement(By.className("racing-location"));
+            System.out.println("Location: " + raceLocationCell.getText());
+            List<WebElement> races = meeting.findElements(By.className("odds"));
+            int raceCount = 1;
+            for (WebElement race : races) {
+                System.out.println("Race number : " +raceCount + "time or place:" + race.getText());
+                raceCount++;
+            }
+
         }
     }
 
