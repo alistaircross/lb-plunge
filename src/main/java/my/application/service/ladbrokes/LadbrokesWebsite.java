@@ -32,7 +32,7 @@ public class LadbrokesWebsite extends BaseBettingWebsite {
         WebElement loginForm = webDriver.findElement(By.id("form_users_login"));
         WebElement userNameInput = loginForm.findElement(By.id("userauth_username"));
         WebElement passwordInput = loginForm.findElement(By.id("userauth_password"));
-        passwordInput.sendKeys("");
+        passwordInput.sendKeys("Reddog88");
         userNameInput.sendKeys("Alizkat");
         Thread.sleep(WAIT_TIME);
         userNameInput.sendKeys(RETURN);
@@ -56,13 +56,19 @@ public class LadbrokesWebsite extends BaseBettingWebsite {
         return false;
     }
 
-    public void getHorseRaces(){
+    public void getAllHorseRaces(){
         super.openPage(LADBROKES_HORSES_URL);
         WebElement racesDiv = webDriver.findElement(By.id("racesToday"));
-        List<WebElement> listOfRaceBoxs = racesDiv.findElements(By.className("fullbox"));
-        for (WebElement listOfRaceBox : listOfRaceBoxs) {
+        List<WebElement> raceBoxes = racesDiv.findElements(By.className("fullbox"));
+        for (WebElement listOfRaceBox : raceBoxes) {
             WebElement raceHeading = listOfRaceBox.findElement(By.className("fullbox-hdr"));
             System.out.println("Text is: " + raceHeading.getText());
+        }
+    }
+
+    private void getRacesForLocation(WebElement fullEventBox) {
+        List<WebElement> meetings = fullEventBox.findElements(By.className("meeting"));
+        for (WebElement meeting : meetings) {
         }
     }
 

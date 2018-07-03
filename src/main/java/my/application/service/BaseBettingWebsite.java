@@ -24,7 +24,7 @@ public abstract class BaseBettingWebsite implements BettingWebsite {
     }
 
     private void setChromeWebDriver() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\d829410\\Workspace\\Projects\\personal\\lb-plunge\\src\\resources\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", ".\\src\\resources\\chromedriver.exe");
         webDriver  = new ChromeDriver();
     }
 
