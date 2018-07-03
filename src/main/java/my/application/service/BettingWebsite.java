@@ -1,5 +1,7 @@
 package my.application.service;
 
 public interface BettingWebsite {
-    public void login();
+    void openPage(String url);
+    public void login() throws InterruptedException;
+    public boolean getLoggedIn();
 }
