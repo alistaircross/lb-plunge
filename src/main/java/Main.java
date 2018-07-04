@@ -12,7 +12,7 @@ public class Main {
                 e.printStackTrace();
             }
         }
-        ldw.placeHorseBet(LadbrokesWebsite.LOCAL_RACE_HEADING,"Belmont", 3, 5);
+        ldw.placeHorseBet(LadbrokesWebsite.LOCAL_RACE_HEADING,"Belmont", 4, 5);
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {

@@ -39,4 +39,10 @@ public class LbHorseRaceBox {
     public LbHorseRaceEvent getHorseRaceEvent(String location) {
         return raceEvents.get(location);
     }
+
+    public void navigateToRace(String location, Integer raceNumber) {
+        LbHorseRaceEvent event = getHorseRaceEvent(location);
+        LbHorseRace race = event.getRaceNumber(raceNumber);
+        race.clickRace();
+    }
 }

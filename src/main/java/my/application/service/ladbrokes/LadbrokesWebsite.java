@@ -6,6 +6,7 @@ import my.application.utils.AuthHelper;
 import my.application.view.ladbrokes.horse.LbHorseRace;
 import my.application.view.ladbrokes.horse.LbHorseRaceBox;
 import my.application.view.ladbrokes.horse.LbHorseRaceEvent;
+import my.application.view.ladbrokes.horse.LbHorseRacePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -68,10 +69,11 @@ public class LadbrokesWebsite extends BaseBettingWebsite {
 
     public void placeHorseBet(String globalLocation, String location, Integer raceNumber, Integer horseNumber) {
         getAllHorseRaces();
-        LbHorseRaceBox horseRaceBox = horseRaces.get(globalLocation);
-        LbHorseRaceEvent event = horseRaceBox.getHorseRaceEvent(location);
-        LbHorseRace race = event.getRaceNumber(raceNumber);
-        race.clickRace();
+        horseRaces.get(globalLocation).navigateToRace(location, raceNumber);
+        WebDriverWait wait = new WebDriverWait(webDriver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("competitor-view")));
+        WebElement competitorView  = webDriver.findElement(By.className("competitor-view"));
+        LbHorseRacePage bettingRacePage = new LbHorseRacePage(competitorView);
     }
 
     private void getAllHorseRaces() {
