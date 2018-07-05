@@ -1,17 +1,27 @@
 package my.application.view.ladbrokes.horse;
 
+import my.application.view.ladbrokes.all.LbCompetitorBettingPopUp;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 
 public class LbHorseRacePage {
+    private static final Log LOG = LogFactory.getLog(LbHorseRacePage.class);
+
+    private WebDriver webDriver;
     private WebElement competitorTable;
     private HashMap<Integer, LbHorseCompetitor> competitors;
 
-    public LbHorseRacePage(WebElement competitorTable) {
+    public LbHorseRacePage(WebDriver webDriver, WebElement competitorTable) {
+        this.webDriver = webDriver;
         this.competitorTable = competitorTable;
         setCompetitors();
     }
@@ -26,6 +36,24 @@ public class LbHorseRacePage {
     }
 
     public Boolean betOnHorse(Integer horseNumber, BigDecimal amount) {
-        return null;
+        LbHorseCompetitor competitor = competitors.get(horseNumber);
+        if (competitor != null && competitor.hasFixedOdds()) {
+            competitor.clickWin();
+            LbCompetitorBettingPopUp betPopUp = getBettingPopup();
+            if (betPopUp != null) {
+                betPopUp.selectEachWay();
+                return betPopUp.placeBet(amount.toString());
+            }
+        } else {
+            LOG.error("Tried to place bet on horse that either doesn't exist or have fixed odds");
+        }
+        return false;
+    }
+
+    private LbCompetitorBettingPopUp getBettingPopup() {
+        WebDriverWait wait = new WebDriverWait(webDriver, 5);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("pop_container")));
+        WebElement bettingPopupElement = webDriver.findElement(By.className("pop_container"));
+        return new LbCompetitorBettingPopUp(webDriver, bettingPopupElement);
     }
 }

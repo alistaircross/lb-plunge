@@ -44,21 +44,32 @@ public class LbHorseCompetitor {
 
     private void setOdds(WebElement competitor) {
         String competitorClass = competitor.getAttribute("class");
-        if(competitorClass.contains("not-scratched")) {
-            winOddsElement = competitor.findElement(By.className("win"));
-            if (winOddsElement != null && winOddsElement.getText() != null) {
-                String winOdds = winOddsElement.getText().trim();
-                this.winOdds = new BigDecimal(winOdds);
-            }
-            placeOddsElement = competitor.findElement(By.className("place"));
-            if (placeOddsElement != null && placeOddsElement.getText() != null) {
-                String placeOdds = placeOddsElement.getText().trim();
-                this.placeOdds = new BigDecimal(placeOdds);
+        if (competitorClass.contains("not-scratched")) {
+            try {
+                winOddsElement = competitor.findElement(By.className("win"));
+                if (winOddsElement != null && winOddsElement.getText() != null) {
+                    String winOdds = winOddsElement.getText().trim();
+                    this.winOdds = new BigDecimal(winOdds);
+                }
+                placeOddsElement = competitor.findElement(By.className("place"));
+                if (placeOddsElement != null && placeOddsElement.getText() != null) {
+                    String placeOdds = placeOddsElement.getText().trim();
+                    this.placeOdds = new BigDecimal(placeOdds);
+                }
+            } catch (Throwable problemGettingOdds) {
+                LOG.error("Problem getting fixed odds.");
             }
         } else {
             scratched = true;
-            return;
         }
+    }
+
+    public Boolean getScratched() {
+        return scratched;
+    }
+
+    public Boolean hasFixedOdds() {
+        return placeOdds != null || winOdds != null;
     }
 
     @Override
@@ -75,5 +86,9 @@ public class LbHorseCompetitor {
 
     public Integer getHorseNumber() {
         return horseNumber;
+    }
+
+    public void clickWin() {
+        winOddsElement.click();
     }
 }

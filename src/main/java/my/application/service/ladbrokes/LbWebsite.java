@@ -33,7 +33,7 @@ public class LbWebsite extends BaseBettingWebsite {
     private static final String LADBROKES_GREYHOUNDS_URL = "https://www.ladbrokes.com.au/racing/greyhounds/";
     private static final Log LOG = LogFactory.getLog(LbWebsite.class);
 
-    private static final int WAIT_TIME = 500;
+    private static final int WAIT_TIME = 600;
     private AuthHelper authHelper;
     private HashMap<String, LbHorseRaceBox> horseRaces;
 
@@ -59,7 +59,7 @@ public class LbWebsite extends BaseBettingWebsite {
         }
         userNameInput.sendKeys(RETURN);
 
-        WebDriverWait wait = new WebDriverWait(webDriver, 10);
+        WebDriverWait wait = new WebDriverWait(webDriver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loggedin")));
     }
 
@@ -140,7 +140,7 @@ public class LbWebsite extends BaseBettingWebsite {
         if (competitorView == null) {
             throw new CannotFindElementException("Cannot find the competitor-view");
         }
-        return new LbHorseRacePage(competitorView);
+        return new LbHorseRacePage(webDriver, competitorView);
     }
 
     private void checkLoggedIn() {
