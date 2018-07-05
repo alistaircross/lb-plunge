@@ -1,5 +1,7 @@
 package my.application.view.ladbrokes.horse;
 
+import my.application.enums.RaceType;
+import my.application.model.CannotFindRaceException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.By;
@@ -42,7 +44,13 @@ public class LbHorseRaceBox {
 
     public void navigateToRace(String location, Integer raceNumber) {
         LbHorseRaceEvent event = getHorseRaceEvent(location);
-        LbHorseRace race = event.getRaceNumber(raceNumber);
-        race.clickRace();
+        if (event != null) {
+            LbHorseRace race = event.getRaceNumber(raceNumber);
+            if (race != null) {
+                race.clickRace();
+                return;
+            }
+        }
+        throw new CannotFindRaceException("Cannot find race " + location + " R" + raceNumber + "TYPE: " + RaceType.HORSE);
     }
 }

@@ -1,18 +1,9 @@
-import my.application.service.ladbrokes.LadbrokesWebsite;
+import my.application.service.ladbrokes.LbWebsite;
 
 public class Main {
     public static void main(String[] args) {
-        LadbrokesWebsite ldw = new LadbrokesWebsite();
-        ldw.openHomePage();
-        boolean loggedIn = ldw.getLoggedIn();
-        if(!loggedIn) {
-            try {
-                ldw.login();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        ldw.placeHorseBet(LadbrokesWebsite.LOCAL_RACE_HEADING,"Belmont", 4, 5);
+        LbWebsite ldw = new LbWebsite();
+        ldw.placeHorseBet(LbWebsite.LOCAL_RACE_HEADING,"Grafton", 6, 5);
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {

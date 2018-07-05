@@ -3,6 +3,7 @@ package my.application.view.ladbrokes.horse;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 
@@ -17,12 +18,14 @@ public class LbHorseRacePage {
 
     private void setCompetitors() {
         List<WebElement> competitorList = competitorTable.findElements(By.className("competitor"));
-
+        competitors = new HashMap<Integer, LbHorseCompetitor>();
         for (WebElement competitorElememt : competitorList) {
             LbHorseCompetitor competitor = new LbHorseCompetitor(competitorElememt);
-            System.out.println(competitor);
+            competitors.put(competitor.getHorseNumber(), competitor);
         }
-
     }
 
+    public Boolean betOnHorse(Integer horseNumber, BigDecimal amount) {
+        return null;
+    }
 }
