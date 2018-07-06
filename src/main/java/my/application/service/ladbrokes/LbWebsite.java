@@ -78,10 +78,9 @@ public class LbWebsite extends BaseBettingWebsite {
         return false;
     }
 
-    public void placeHorseBet(String globalLocation, String location, Integer raceNumber, Integer horseNumber) {
+    public void placeHorseBet(String globalLocation, String location, Integer raceNumber, Integer horseNumber, BigDecimal amount) {
         checkLoggedIn();
         LbHorseRacePage racePage = navigateToHorseRacePage(globalLocation, location, raceNumber);
-        BigDecimal amount = new BigDecimal(10.00);
         if (racePage != null) {
             racePage.betOnHorse(horseNumber, amount);
         } else {
