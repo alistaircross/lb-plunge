@@ -1,0 +1,229 @@
+2018-07-18 17:41:20,643 INFO  - Starting cycle.
+2018-07-18 17:44:05,458 Main  INFO  - Starting cycle.
+2018-07-18 17:50:32,695 Main  INFO  - Starting cycle.
+2018-07-18 17:51:42,075 Main  INFO  - Starting cycle.
+2018-07-18 17:51:48,028 Main  INFO  - Starting cycle.
+2018-07-18 17:52:58,012 Main$1  ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 17:52:58,012 Main  INFO  - Starting cycle.
+2018-07-18 18:19:18,313 Main  INFO  - Starting cycle.
+2018-07-18 18:20:26,450 Main$1  ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:20:26,450 Main  INFO  - Starting cycle.
+2018-07-18 18:21:27,399 Main$1  ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:21:27,400 Main  INFO  - Starting cycle.
+2018-07-18 18:21:31,571 Main$1  ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:21:31,571 Main  INFO  - Starting cycle.
+2018-07-18 18:22:14,069 Main main INFO  - Starting cycle.
+2018-07-18 18:23:18,804 Main$1 Timer-0 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:23:18,804 Main Timer-0 INFO  - Starting cycle.
+2018-07-18 18:23:25,209 Main main INFO  - Starting cycle.
+2018-07-18 18:23:42,472 Main main INFO  - Starting cycle.
+2018-07-18 18:24:46,317 Main$1 Timer-0 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:24:46,318 Main Timer-0 INFO  - Starting cycle.
+2018-07-18 18:25:45,076 Main$1 Timer-0 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:25:45,077 Main Timer-0 INFO  - Starting cycle.
+2018-07-18 18:25:50,777 Main$1 Timer-1 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:25:50,780 Main Timer-1 INFO  - Starting cycle.
+2018-07-18 18:26:46,056 Main$1 Timer-0 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:26:46,060 Main Timer-0 INFO  - Starting cycle.
+2018-07-18 18:26:46,723 Main$1 Timer-1 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:26:46,724 Main Timer-1 INFO  - Starting cycle.
+2018-07-18 18:26:49,055 Main$1 Timer-2 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:26:49,060 Main Timer-2 INFO  - Starting cycle.
+2018-07-18 18:26:56,246 Main$1 Timer-3 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:26:56,252 Main Timer-3 INFO  - Starting cycle.
+2018-07-18 18:27:44,566 Main$1 Timer-2 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:27:44,570 Main Timer-2 INFO  - Starting cycle.
+2018-07-18 18:27:44,866 Main$1 Timer-0 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:27:44,868 Main Timer-0 INFO  - Starting cycle.
+2018-07-18 18:27:48,558 Main$1 Timer-4 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:27:48,564 Main Timer-4 INFO  - Starting cycle.
+2018-07-18 18:27:54,256 Main$1 Timer-1 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:27:54,260 Main Timer-1 INFO  - Starting cycle.
+2018-07-18 18:27:55,488 Main$1 Timer-5 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:27:55,491 Main Timer-5 INFO  - Starting cycle.
+2018-07-18 18:27:56,014 Main$1 Timer-7 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:27:56,015 Main Timer-7 INFO  - Starting cycle.
+2018-07-18 18:27:56,172 Main$1 Timer-6 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:27:56,175 Main Timer-6 INFO  - Starting cycle.
+2018-07-18 18:27:56,877 Main$1 Timer-3 ERROR - Error:
+java.lang.NullPointerException
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:882)
+	at org.openqa.selenium.support.ui.FluentWait.<init>(FluentWait.java:104)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:71)
+	at org.openqa.selenium.support.ui.WebDriverWait.<init>(WebDriverWait.java:45)
+	at my.application.mobile.MobileIntegrationService.getPlungeBets(MobileIntegrationService.java:55)
+	at Main$1.run(Main.java:30)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+2018-07-18 18:27:56,880 Main Timer-3 INFO  - Starting cycle.

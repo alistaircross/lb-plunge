@@ -1,5 +1,7 @@
 package my.application.browser.ladbrokes.all;
 
+import my.application.shared.Bet;
+import my.application.shared.PlacedBetsUtils;
 import my.application.shared.enums.ShouldBet;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -12,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LbCompetitorBettingPopUp {
     private static final Log LOG = LogFactory.getLog(LbCompetitorBettingPopUp.class);
+    private static final Log BET_LOG = LogFactory.getLog("BetLogger");
 
     private WebElement eachWayElement;
     private WebDriver webDriver;
@@ -54,13 +57,13 @@ public class LbCompetitorBettingPopUp {
     }
 
     public void selectEachWay() {
-        if(!eachWayElement.isSelected()) {
+        if (!eachWayElement.isSelected()) {
             eachWayElement.click();
         }
     }
 
     public void deSelectEachWay() {
-        if(eachWayElement.isSelected()) {
+        if (eachWayElement.isSelected()) {
             eachWayElement.click();
         }
     }
@@ -71,8 +74,11 @@ public class LbCompetitorBettingPopUp {
         placeBetButton.click();
         WebDriverWait wait = new WebDriverWait(webDriver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("betconfirm")));
-        LOG.info("Placing bet on: Location: " + location + " Race" + raceNumber + " Runner: " + entrantName + " Runner number: " + entrantNumber + " Odds: " + odds);
-        if(ShouldBet.SHOULD_BET) {
+        LOG.info("Placing bet on: Location: " + location + " Race Number:" + raceNumber + " Runner: " + entrantName + " Runner number: " + entrantNumber + " Odds: " + odds);
+        BET_LOG.info("Placing bet on: Location: " + location + " Race Number:" + raceNumber + " Runner: " + entrantName + " Runner number: " + entrantNumber + " Odds: " + odds);
+        Bet bet = new Bet(location, raceNumber, entrantName, entrantNumber, odds);
+        if (ShouldBet.SHOULD_BET && !PlacedBetsUtils.betBeenPlaced(bet)) {
+            PlacedBetsUtils.addPlacedBet(bet);
             bettingPopupElement.findElement(By.className("betconfirm")).click();
             try {
                 Thread.sleep(5000l);
@@ -80,6 +86,8 @@ public class LbCompetitorBettingPopUp {
                 e.printStackTrace();
             }
             return wasBetPlaced();
+        } else if (PlacedBetsUtils.betBeenPlaced(bet)) {
+            LOG.info("Bet is already placed:" + bet);
         }
         return false;
     }

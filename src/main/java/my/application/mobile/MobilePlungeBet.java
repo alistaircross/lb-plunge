@@ -14,8 +14,9 @@ public class MobilePlungeBet {
     private final String distance;
     private final String trackRating;
     private final String timeToJump;
+    private String countryOfOrigin;
 
-    public MobilePlungeBet(RaceType raceType, String runnerName, Integer runnerNumber, String location, Integer raceNumber, String distance, String trackRating, String timeToJump) {
+    public MobilePlungeBet(RaceType raceType, String runnerName, Integer runnerNumber, String location, Integer raceNumber, String distance, String trackRating, String timeToJump, String countryOfOrigin) {
         this.raceType = raceType;
         this.runnerName = runnerName;
         this.runnerNumber = runnerNumber;
@@ -24,27 +25,15 @@ public class MobilePlungeBet {
         this.distance = distance;
         this.trackRating = trackRating;
         this.timeToJump = timeToJump;
+        this.countryOfOrigin = countryOfOrigin;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MobilePlungeBet that = (MobilePlungeBet) o;
-        return raceType == that.raceType &&
-                Objects.equals(runnerName, that.runnerName) &&
-                Objects.equals(runnerNumber, that.runnerNumber) &&
-                Objects.equals(location, that.location) &&
-                Objects.equals(raceNumber, that.raceNumber) &&
-                Objects.equals(distance, that.distance) &&
-                Objects.equals(trackRating, that.trackRating) &&
-                Objects.equals(timeToJump, that.timeToJump);
+    public RaceType getRaceType() {
+        return raceType;
     }
 
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(raceType, runnerName, runnerNumber, location, raceNumber, distance, trackRating, timeToJump);
+    public String getRunnerName() {
+        return runnerName;
     }
 
     @Override
@@ -58,15 +47,35 @@ public class MobilePlungeBet {
                 ", distance='" + distance + '\'' +
                 ", trackRating='" + trackRating + '\'' +
                 ", timeToJump='" + timeToJump + '\'' +
+                ", countryOfOrigin='" + countryOfOrigin + '\'' +
                 '}';
     }
 
-    public RaceType getRaceType() {
-        return raceType;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MobilePlungeBet plungeBet = (MobilePlungeBet) o;
+        return raceType == plungeBet.raceType &&
+                Objects.equals(runnerName, plungeBet.runnerName) &&
+                Objects.equals(runnerNumber, plungeBet.runnerNumber) &&
+                Objects.equals(location, plungeBet.location) &&
+                Objects.equals(raceNumber, plungeBet.raceNumber) &&
+                Objects.equals(distance, plungeBet.distance) &&
+                Objects.equals(trackRating, plungeBet.trackRating) &&
+                Objects.equals(timeToJump, plungeBet.timeToJump) &&
+                Objects.equals(countryOfOrigin, plungeBet.countryOfOrigin);
     }
 
-    public String getRunnerName() {
-        return runnerName;
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(raceType, runnerName, runnerNumber, location, raceNumber, distance, trackRating, timeToJump, countryOfOrigin);
+    }
+
+    public String getCountryOfOrigin() {
+
+        return countryOfOrigin;
     }
 
     public Integer getRunnerNumber() {
@@ -91,5 +100,9 @@ public class MobilePlungeBet {
 
     public String getTimeToJump() {
         return timeToJump;
+    }
+
+    public String getId() {
+        return location.toLowerCase() + raceNumber + runnerName.toLowerCase() + runnerNumber;
     }
 }

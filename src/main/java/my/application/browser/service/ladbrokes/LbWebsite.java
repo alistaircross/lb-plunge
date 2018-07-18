@@ -80,15 +80,15 @@ public class LbWebsite extends BaseBettingWebsite {
 
     public void placeHorseBet(String globalLocation, String location, Integer raceNumber, Integer horseNumber, BigDecimal amount) {
         checkLoggedIn();
-        LbHorseRacePage racePage = navigateToHorseRacePage(globalLocation, location, raceNumber);
+        LbHorseRacePage racePage = navigateToRacePage(globalLocation, location, raceNumber);
         if (racePage != null) {
-            racePage.betOnHorse(horseNumber, amount);
+            racePage.betOnRunner(horseNumber, amount);
         } else {
             LOG.error("Cannot find the race page.");
         }
     }
 
-    private LbHorseRacePage navigateToHorseRacePage(String globalLocation, String location, Integer raceNumber) {
+    private LbHorseRacePage navigateToRacePage(String globalLocation, String location, Integer raceNumber) {
         LbHorseRacePage racePage = retrieveFromNextToJump(location, raceNumber, HORSE);
         if (racePage == null) {
             racePage = retrieveFromHorseRaces(globalLocation, location, raceNumber);

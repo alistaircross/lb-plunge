@@ -19,6 +19,8 @@ public class LbHorseRacePage {
     private WebDriver webDriver;
     private WebElement competitorTable;
     private HashMap<Integer, LbHorseCompetitor> competitors;
+    private static final Log BET_LOG = LogFactory.getLog("BetLogger");
+
 
     public LbHorseRacePage(WebDriver webDriver, WebElement competitorTable) {
         this.webDriver = webDriver;
@@ -35,8 +37,8 @@ public class LbHorseRacePage {
         }
     }
 
-    public Boolean betOnHorse(Integer horseNumber, BigDecimal amount) {
-        LbHorseCompetitor competitor = competitors.get(horseNumber);
+    public Boolean betOnRunner(Integer runnerNumber, BigDecimal amount) {
+        LbHorseCompetitor competitor = competitors.get(runnerNumber);
         if (competitor != null && competitor.hasFixedOdds()) {
             competitor.clickWin();
             LbCompetitorBettingPopUp betPopUp = getBettingPopup();
@@ -46,6 +48,7 @@ public class LbHorseRacePage {
             }
         } else {
             LOG.error("Tried to place bet on horse that either doesn't exist or have fixed odds");
+            BET_LOG.info("Failed to bet on runner: " + runnerNumber);
         }
         return false;
     }

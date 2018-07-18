@@ -57,11 +57,8 @@ public class MobileIntegrationService {
         MobileElement betList = driver.findElement(By.id("au.com.plungeapp.plunge:id/bet_list"));
         List<MobileElement> betListFrame = betList.findElements(By.className("android.widget.FrameLayout"));
         for (MobileElement mobileElement : betListFrame) {
-            List<MobileElement> raceItems = mobileElement.findElements(By.className("android.widget.LinearLayout"));
-            for (MobileElement raceItem : raceItems) {
-                MobilePlungeBet bet = extractMobilePlunge(raceItem);
-                returnRaces.add(bet);
-            }
+            MobilePlungeBet bet = extractMobilePlunge(mobileElement);
+            returnRaces.add(bet);
         }
         return returnRaces;
     }
@@ -72,21 +69,28 @@ public class MobileIntegrationService {
         MobileElement raceNumberAndRunnerName = raceItem.findElement(By.id("au.com.plungeapp.plunge:id/post_outcome"));
         MobileElement locationAndRaceInfo = raceItem.findElement(By.id("au.com.plungeapp.plunge:id/post_event"));
         String timeToJump = timeTillJump.getText();
-        RaceType raceType = RaceType.valueOf(raceTypeE.getText());
+        RaceType raceType = RaceType.getRaceTypeForString(raceTypeE.getText());
         String runnerInfo = raceNumberAndRunnerName.getText();
         int numberIndex = runnerInfo.indexOf(".");
         Integer runnerNumber = new Integer(runnerInfo.substring(0, numberIndex).trim());
         String runnerName = runnerInfo.substring(numberIndex + 1).trim();
 
-
         String[] raceDetails = locationAndRaceInfo.getText().split("-");
         String location = null;
+        String countryOfOrigin = "AUS";
         Integer raceNumber = null;
         String distance = null;
         String trackRating = null;
         for (int i = 0; i < raceDetails.length; i++) {
             if (i == 0) {
-                location = raceDetails[i].trim();
+                String tmp = raceDetails[i].trim();
+                int countryOfOriginStart = tmp.indexOf("(");
+                if (countryOfOriginStart != -1) {
+                    location = tmp.substring(0, countryOfOriginStart).trim();
+                    countryOfOrigin = tmp.substring(countryOfOriginStart + 1, tmp.indexOf(")"));
+                } else {
+                    location = tmp;
+                }
             } else if (i == 1) {
                 String temp = raceDetails[i].trim();
                 temp = temp.trim();
@@ -100,6 +104,6 @@ public class MobileIntegrationService {
             }
         }
 
-        return new MobilePlungeBet(raceType,runnerName,runnerNumber,location,raceNumber,distance,trackRating,timeToJump);
+        return new MobilePlungeBet(raceType, runnerName, runnerNumber, location, raceNumber, distance, trackRating, timeToJump, countryOfOrigin);
     }
 }

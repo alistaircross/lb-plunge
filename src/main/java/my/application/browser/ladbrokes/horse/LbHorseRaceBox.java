@@ -31,7 +31,7 @@ public class LbHorseRaceBox {
             if (raceLocationCell != null) {
                 String localLocation = raceLocationCell.getText();
                 LbHorseRaceEvent event = new LbHorseRaceEvent(meeting);
-                raceEvents.put(localLocation, event);
+                raceEvents.put(localLocation.toLowerCase(), event);
             } else {
                 LOG.error("Cannot find racing location. Not moving forward with creating the races.");
             }
@@ -39,16 +39,18 @@ public class LbHorseRaceBox {
     }
 
     public LbHorseRaceEvent getHorseRaceEvent(String location) {
-        return raceEvents.get(location);
+        return raceEvents.get(location.toLowerCase());
     }
 
     public void navigateToRace(String location, Integer raceNumber) {
         LbHorseRaceEvent event = getHorseRaceEvent(location);
         if (event != null) {
             LbHorseRace race = event.getRaceNumber(raceNumber);
-            if (race != null) {
+            if (race != null && race.isOpen()) {
                 race.clickRace();
                 return;
+            } else if(!race.isOpen()) {
+                LOG.error("Race is closed");
             }
         }
         throw new CannotFindRaceException("Cannot find race " + location + " R" + raceNumber + "TYPE: " + RaceType.HORSE);

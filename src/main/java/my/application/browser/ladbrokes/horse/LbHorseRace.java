@@ -14,4 +14,9 @@ public class LbHorseRace {
     public void clickRace() {
         raceMeet.click();
     }
+
+    public boolean isOpen() {
+        String raceText = raceMeet.getText().toLowerCase();
+        return !raceText.contains("closed") && !raceText.contains("interim");
+    }
 }
